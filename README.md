@@ -1,7 +1,5 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/github_banner@dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/github_banner@light.png">
-  <img alt="Logo" src="./assets/github_banner@dark.png">
+  <img alt="Logo" src="./assets/github_banner@light.png">
 </picture>
 
 <br/>
