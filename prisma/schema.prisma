@@ -22,6 +22,7 @@ model Channel {
 
 model Video {
   id        Int     @id @default(autoincrement())
+  yt_id     String  @unique
   title     String
   filename  String  @unique
   thumbnail String
