@@ -51,10 +51,10 @@ const download = async (link) => {
 export const downloadContent = async (link) => {
   const newIDS = await download(link);
   console.log("Downloaded videos");
-  for (const id in newIDS) {
-    const videoFile = await globby(`./content/videos/**/*${id}*`)[0];
-    const metaFile = await globby(`./content/metadata/**/*${id}*`)[0];
-    const thumbnailFile = await globby(`./content/thumbnails/**/*${id}*`)[0];
+  for (const id of newIDS) {
+    const videoFile = (await globby(`./content/videos/**/*${id}*`))[0];
+    const metaFile = (await globby(`./content/metadata/**/*${id}*`))[0];
+    const thumbnailFile = (await globby(`./content/thumbnails/**/*${id}*`))[0];
 
     const meta = JSON.parse(await readFile(metaFile, "utf-8"));
 
@@ -65,7 +65,7 @@ export const downloadContent = async (link) => {
   }
 };
 
-console.log("Download started...")
+console.log("Download started...");
 if (process.argv.length < 3) exit(1);
 // Downloading video
 (async () => {
